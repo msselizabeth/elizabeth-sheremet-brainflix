@@ -1,0 +1,86 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video {
+  &__title {
+    position: relative;
+    @include page-title;
+    padding-bottom: 1rem;
+    &::after {
+      @include divider;
+    }
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__info {
+    position: relative;
+    padding: 1rem 0;
+    @include flex-between;
+    @include tablet {
+      padding: 1.5rem 0;
+    }
+    @include desktop {
+      padding-right: 1.5rem;
+    }
+
+    &::after {
+      @include divider;
+    }
+    &--container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+    }
+    &--channel {
+      @include sub-title;
+    }
+    &--time {
+      @include label;
+      font-weight: 400;
+    }
+    &--views {
+      position: relative;
+      @include label;
+      display: flex;
+      align-items: center;
+      padding-left: 1.5rem;
+      font-weight: 400;
+
+      &::before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        width: 1.25rem;
+        height: 0.9375rem;
+        background-image: url("../../../src/assets/icons/views.svg");
+        background-size: 1.25rem 0.9375rem;
+        background-repeat: no-repeat;
+      }
+    }
+    &--likes {
+      @extend .video__info--views;
+      &::before {
+        background-image: url("../../../src/assets/icons/likes.svg");
+      }
+    }
+  }
+
+  &__description {
+    padding-top: 1rem;
+    @include tablet {
+      padding-top: 1.5rem;
+    }
+    @include desktop {
+      padding-right: 1.5rem;
+    }
+  }
+}
+
+

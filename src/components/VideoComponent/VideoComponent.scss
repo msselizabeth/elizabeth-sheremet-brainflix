@@ -1,0 +1,23 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video__layout {
+    @include desktop {
+      display: flex;
+      gap: 1.5rem;
+    }
+    &--info-block {
+      @include desktop {
+        position: relative;
+        width: 90%;
+        &::after {
+          position: absolute;
+          content: "";
+          right: 0;
+          top: 0;
+          height: 100%;
+          border-right: 1px solid $divider-color;
+        }
+      }
+    }
+  }
