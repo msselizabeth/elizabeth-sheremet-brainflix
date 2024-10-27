@@ -1,0 +1,71 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  &__container {
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__search--container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    @include tablet {
+      flex-direction: row;
+      gap: 1.75rem;
+      width: 50%;
+    }
+  }
+  &__search {
+    @include input;
+    display: block;
+    width: 85%;
+    align-self: flex-start;
+    padding-left: 2.5rem;
+    background-image: url("../../../src/assets/icons/search.svg");
+    background-size: 1.25rem;
+    background-repeat: no-repeat;
+    background-position: 0.625rem center;
+    @include tablet {
+      width: 100%;
+      padding: 0.5rem 2rem;
+      padding-left: 2.5rem;
+      height: 2.5rem;
+      align-self: center;
+    }
+  }
+  &__avatar {
+    position: absolute;
+    top: 2%;
+    right: 0rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+      position: static;
+      order: 1;
+    }
+  }
+
+  &__button {
+    @include button("../../../src/assets/icons/upload.svg");
+    @include flex-center;
+  }
+
+  &__logo {
+    width: 7.5rem;
+    height: 1.5625rem;
+  }
+}

@@ -1,0 +1,16 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video{
+    display: block;
+    max-width: calc(100% - 3rem);
+    margin: 0 auto;
+    @include desktop{
+        max-width: 80%
+    }
+ 
+    &__container{
+        width: 100%;
+        background-color: $video-player-background;
+    }
+  }

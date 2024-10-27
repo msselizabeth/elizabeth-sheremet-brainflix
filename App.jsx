@@ -3,7 +3,7 @@ import videos from "../src/assets/Data/video-details.json";
 import { useState } from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
-import VideoComponent from './components/VideoComponent/VideoComponent';
+
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(videos[0]);
@@ -17,7 +17,6 @@ function App() {
     <>
       <Header />
       <Hero video={currentVideo}/>
-      <VideoComponent video={currentVideo} videoList={videos} handleVideoSelect={handleVideoSelect} />
     </>
   )
 }
