@@ -1,0 +1,40 @@
+// text colors
+$primary-text-color: #323232;
+$secondary-text-color: #AFAFAF;
+$primary-active-text-color: #0095FF;
+$secondary-active-text-color: #ffffff;
+
+// background colors
+$primary-background: #ffffff;
+$alternative-background-light: #FAFAFA;
+
+// video player
+$video-player-background: #000000;
+
+// buttons
+$button-background-color: #0095FF;
+$button-background-color-active: #0065AD;
+$button-text-color: #ffffff;
+
+// labels
+$labels-text-color: #AFAFAF;
+
+// divider line
+$divider-color: #E1E1E1;
+
+// input
+$text-input-color: #323232;
+$border-input-color: #E1E1E1;
+$background-input-color: #FAFAFA;
+$border-input-error: #D22D2D;
+$border-input-active: #0095FF;
+
+// avatar
+$avatar-color: #E1E1E1;
+
+// breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// animation
+$transition: all 0.3s ease-in-out;
