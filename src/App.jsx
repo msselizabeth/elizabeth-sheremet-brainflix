@@ -16,8 +16,10 @@ function App() {
   return (
     <>
       <Header />
+      <main>
       <Hero video={currentVideo}/>
       <VideoComponent video={currentVideo} videoList={videos} handleVideoSelect={handleVideoSelect} />
+      </main>
     </>
   )
 }
