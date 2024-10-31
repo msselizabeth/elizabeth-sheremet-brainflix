@@ -1,17 +1,62 @@
 import { useNavigate } from "react-router-dom";
 import "./UploadVideoForm.scss";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const UploadVideoForm = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [errors, setErrors] = useState({ title: "", description: "" });
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const validateFields = () => {
+    let isValid = true;
+    const newErrors = { title: "", description: "" };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        toast.success("Upload successful!", {
-            onClose: () => navigate('/') 
-        });
+    if (!title.trim()) {
+      newErrors.title = "Title cannot be empty or just spaces.";
+      isValid = false;
     }
+    if (!description.trim()) {
+      newErrors.description = "Description cannot be empty or just spaces.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+    const handleInputChange = (e) => {
+
+    const { name, value } = e.target;
+        if (name === "title") {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                title: ""
+              }));
+            setTitle(value)
+    };
+        if (name === "description") {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                description: ""
+              }));
+            setDescription(value)
+    };
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateFields()) {
+      toast.success("Upload successful!", {
+        onClose: () => navigate("/"),
+      });
+      setTitle("");
+      setDescription("");
+    }
+  };
+
   return (
     <section className="section">
       <div className="layout">
@@ -36,10 +81,17 @@ const UploadVideoForm = () => {
                   type="text"
                   name="title"
                   id="title"
+                  value={title}
                   placeholder="Add a title to your video"
-                  className="upload-video__input"
+                  className={`upload-video__input ${
+                    errors.title ? "upload-video__input--error" : ""
+                  }`}
                   required
+                  onChange={handleInputChange}
                 />
+                {errors.title && (
+                  <p className="upload-video__error">{errors.title}</p>
+                )}
               </label>
 
               <label htmlFor="description" className="upload-video__label">
@@ -48,10 +100,17 @@ const UploadVideoForm = () => {
                   type="text"
                   name="description"
                   id="description"
+                  value={description}
                   placeholder="Add a description to your video"
                   required
-                  className="upload-video__input upload-video__input--description"
+                  className={`upload-video__input upload-video__input--description ${
+                    errors.description ? "upload-video__input--error" : ""
+                  }`}
+                  onChange={handleInputChange}
                 />
+                {errors.description && (
+                  <p className="upload-video__error">{errors.description}</p>
+                )}
               </label>
             </div>
           </div>
