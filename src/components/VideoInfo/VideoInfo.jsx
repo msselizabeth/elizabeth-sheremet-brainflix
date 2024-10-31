@@ -1,7 +1,7 @@
 import "./VideoInfo.scss";
 
 const VideoInfo = ({
-  video: { title, channel, timestamp, views, likes, description },
+  video:{title, channel, timestamp, views, likes, description}
 }) => {
   return (
     <>

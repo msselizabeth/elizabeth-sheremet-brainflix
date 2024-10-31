@@ -3,8 +3,10 @@
 
 .video{
     display: block;
-    max-width: calc(100% - 3rem);
     margin: 0 auto;
+    @include tablet {
+        max-width: calc(100% - 3rem);
+    }
     @include desktop{
         max-width: 80%
     }

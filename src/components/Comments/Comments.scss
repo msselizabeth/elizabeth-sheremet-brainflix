@@ -71,9 +71,9 @@
   }
 
   &__input {
-    @include input;
     width: 100%;
     padding-bottom: 5rem;
+    @include input;
 
     @include tablet {
       padding-bottom: 0.75rem;
@@ -128,5 +128,15 @@
   }
   &__time {
     color: $labels-text-color;
+  }
+}
+
+.no-comments {
+  padding-top: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  @include tablet {
+    padding-top: 1.5rem;
   }
 }

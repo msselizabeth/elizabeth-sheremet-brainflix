@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import "./VideoList.scss";
 
-const VideoList = ({ videos, currentVideoId, onVideoSelect }) => {
+const VideoList = ({ videos, currentVideoId}) => {
   return (
     <div className="videos">
       <h2 className="videos__title">Next Videos</h2>
@@ -11,13 +12,18 @@ const VideoList = ({ videos, currentVideoId, onVideoSelect }) => {
             <li
               key={video.id}
               className="videos__item"
-              onClick={() => onVideoSelect(video.id)}
             >
-              <img src={video.image} alt={video.title} className="videos__image"/>
-              <div className="videos__info">
-              <p className="videos__info--title">{video.title}</p>
-              <p className="videos__info--channel">{video.channel}</p>
-            </div>
+              <Link to={`/videos/${video.id}`} className="videos__link">
+                <img
+                  src={video.image}
+                  alt={video.title}
+                  className="videos__image"
+                />
+                <div className="videos__info">
+                  <p className="videos__info--title">{video.title}</p>
+                  <p className="videos__info--channel">{video.channel}</p>
+                </div>
+              </Link>
             </li>
           ))}
       </ul>

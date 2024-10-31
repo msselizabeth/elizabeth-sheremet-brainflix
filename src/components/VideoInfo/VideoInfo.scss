@@ -4,8 +4,8 @@
 .video {
   &__title {
     position: relative;
-    @include page-title;
     padding-bottom: 1rem;
+    @include page-title;
     &::after {
       @include divider;
     }
@@ -47,10 +47,10 @@
     }
     &--views {
       position: relative;
-      @include label;
       display: flex;
       align-items: center;
       padding-left: 1.5rem;
+      @include label;
       font-weight: 400;
 
       &::before {
