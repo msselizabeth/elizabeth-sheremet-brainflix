@@ -1,0 +1,13 @@
+@use "../../../src/styles/partials/mixins" as *;
+
+
+.loading__container{
+    @include flex-center;
+    gap: 1rem;
+    height: 50vh;
+}
+.loading__text{
+    font-weight: 600;
+    font-size: 1rem;
+   
+}

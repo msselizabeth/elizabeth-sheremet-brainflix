@@ -5,9 +5,10 @@ import Hero from "../../components/Hero/Hero";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import Comments from "../../components/Comments/Comments";
 import VideoList from "../../components/VideoList/VideoList";
+import Loading from "../../components/Loading/Loading";
 import "./VideoPage.scss";
 import { apiKey, baseUrl } from "../../App";
-import Loading from "../../components/Loading/Loading";
+
 
 const VideoPage = ({ videos }) => {
   const { videoId } = useParams();
@@ -32,7 +33,7 @@ const VideoPage = ({ videos }) => {
     }
   }, [videoId, videos]);
 
-  if (!video) return <p>Loading...</p>;
+  if (!video) return <Loading text={"Loading video info."} />;
 
   return (
     <>

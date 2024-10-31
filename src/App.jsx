@@ -7,6 +7,7 @@ import VideoPage from "./pages/VideoPage/VideoPage";
 import axios from "axios";
 import UploadPage from "./pages/UploadPage/UploadPage";
 import { ToastContainer } from "react-toastify";
+import NotFound from "./components/NotFound/NotFound";
 
 export const apiKey = "f62229a7-4276-4ce1-a592-6df6e8407873";
 export const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
@@ -39,17 +40,14 @@ function App() {
             element={<VideoPage videos={videos} />}
           />
           <Route path="/upload" element={<UploadPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer
           position="top-center"
           autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
           closeOnClick
           rtl={false}
-          pauseOnFocusLoss
           draggable
-          pauseOnHover
           theme="light"
           transition:Bounce
         />

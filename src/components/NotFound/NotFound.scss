@@ -1,0 +1,8 @@
+@use "../../../src/styles/partials/mixins" as *;
+
+.not-found {
+    flex-direction: column;
+    gap: 4rem;
+    height: 80vh;
+    @include flex-center;
+}
