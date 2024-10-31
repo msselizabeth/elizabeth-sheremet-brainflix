@@ -74,6 +74,7 @@
   border-radius: 4px;
   padding: 0.75rem;
   outline: none;
+  background-color: $background-input-color;
   &:focus,
   &:active {
     border-color: $border-input-active;

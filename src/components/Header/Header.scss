@@ -1,7 +1,10 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.header {
+.header {position: relative;
+  &::after{
+    @include divider;
+  }
   &__container {
     @include flex-center;
     flex-direction: column;
