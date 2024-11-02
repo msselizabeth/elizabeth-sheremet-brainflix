@@ -1,4 +1,3 @@
-import Loading from "../Loading/Loading";
 import "./Comments.scss";
 
 const Comments = ({ comments }) => {
@@ -35,8 +34,8 @@ const Comments = ({ comments }) => {
           comments.map((comment) => (
             <li key={comment.id} className="comment__item">
               <div className="comment__image"></div>
-              <div className="comment__item--container">
-                <div className="comment__name-date--container">
+              <div className="comment__item-container">
+                <div className="comment__name-date-container">
                   <h3 className="comment__name">{comment.name}</h3>
                   <p className="comment__time">
                     {new Date(comment.timestamp).toLocaleDateString()}

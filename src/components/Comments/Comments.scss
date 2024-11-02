@@ -3,13 +3,13 @@
 
 .comments {
   padding-top: 1rem;
-  @include tablet{
+  @include tablet {
     padding-top: 1.5rem;
   }
 
   &__title {
     padding-bottom: 1rem;
-    @include tablet{
+    @include tablet {
       padding-bottom: 1.5rem;
     }
   }
@@ -83,8 +83,13 @@
 }
 
 .comment {
+  &__item-container {
+    width: calc(100% - 2.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
- 
   &__item {
     position: relative;
     display: flex;
@@ -97,14 +102,6 @@
     @include desktop {
       padding-right: 1.5rem;
     }
-
-    &--container {
-      width: calc(100% - 2.25rem);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
     &::after {
       @include divider;
     }
@@ -120,7 +117,7 @@
       height: 3rem;
     }
   }
-  &__name-date--container {
+  &__name-date-container {
     @include flex-between;
   }
   &__name {

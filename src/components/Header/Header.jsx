@@ -12,7 +12,7 @@ const Header = () => {
             className="header__logo"
           />
         </Link>
-        <div className="header__search--container">
+        <div className="header__search-container">
           <input
             type="text"
             name="search"

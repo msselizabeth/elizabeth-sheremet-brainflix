@@ -42,7 +42,7 @@ const VideoPage = ({ videos }) => {
         <div className="layout video__layout">
           <div className="video__layout--info-block">
             <VideoInfo video={video} />
-            {video.comments && <Comments comments={video.comments} />}
+            <Comments comments={video.comments} />
           </div>
           <VideoList videos={videos} currentVideoId={video.id} />
         </div>
