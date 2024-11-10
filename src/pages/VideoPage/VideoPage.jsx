@@ -7,17 +7,18 @@ import Comments from "../../components/Comments/Comments";
 import VideoList from "../../components/VideoList/VideoList";
 import Loading from "../../components/Loading/Loading";
 import "./VideoPage.scss";
-import { apiKey, baseUrl } from "../../App";
+import { baseUrl } from "../../App";
 
 
 const VideoPage = ({ videos }) => {
   const { videoId } = useParams();
   const [video, setVideo] = useState(null);
 
+
   async function getVideo(videoId) {
     try {
       const { data } = await axios.get(
-        `${baseUrl}videos/${videoId}?api_key=${apiKey}`
+        `${baseUrl}/videos/${videoId}`
       );
       setVideo(data);
     } catch (error) {

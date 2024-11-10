@@ -9,16 +9,15 @@ import UploadPage from "./pages/UploadPage/UploadPage";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./components/NotFound/NotFound";
 
-export const apiKey = "f62229a7-4276-4ce1-a592-6df6e8407873";
-export const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
+export const baseUrl = "http://localhost:5050";
 
 function App() {
   const [videos, setVideos] = useState([]);
 
   async function getVideos() {
     try {
-      const res = await axios.get(`${baseUrl}videos?api_key=${apiKey}`);
-      const videosList = res.data;
+      const { data } = await axios.get(`${baseUrl}/videos`);
+      const videosList = data;
       setVideos(videosList);
     } catch (error) {
       console.error(error);
@@ -39,7 +38,7 @@ function App() {
             path="/videos/:videoId"
             element={<VideoPage videos={videos} />}
           />
-          <Route path="/upload" element={<UploadPage />} />
+          <Route path="/upload" element={<UploadPage getVideos={getVideos} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer
