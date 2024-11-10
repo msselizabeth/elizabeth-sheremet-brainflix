@@ -28,8 +28,11 @@
   }
   &__video-container{
     @include tablet{
-        width: 30%;
+        width: 50%;
     }
+    @include desktop{
+      width: 35%;
+  }
   }
   &__label-thumbnail {
     display: block;
@@ -44,11 +47,9 @@
     margin-bottom: 1rem;
     border-radius: 5px;
     @include tablet {
-      width: 50%;
       margin-bottom: 1.5rem;
     }
     @include desktop{
-        width: 100%;
         margin-bottom: 0.5rem;
     }
   }
